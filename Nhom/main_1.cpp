@@ -300,16 +300,21 @@ void timLop(LopHoc arrLH[], int slh)
 }
 void kiemTra(LopHoc arrLH[], int slh)
 {
+    bool chuyen = false;
     for (int i = 0; i < slh; i++)
     {
         if (arrLH[i].soHocVien < arrLH[i + 1].soHocVien)
         {
-            cout << "Danh sach cac lop hoc khong duoc sap xep theo so hoc vien giam dan" << endl;
+            chuyen = true;
             break;
         }
-        else
-        {
-            cout << "Danh sach cac lop hoc co duoc sap xep theo so hoc vien giam dan" << endl;
+    }
+    if (chuyen)
+    {
+        cout << "Danh sach cac lop hoc co duoc sap xep theo so hoc vien giam dan" << endl;
         }
+    else
+    {
+        cout << "Danh sach cac lop hoc khong duoc sap xep theo so hoc vien giam dan" << endl;
     }
 }
